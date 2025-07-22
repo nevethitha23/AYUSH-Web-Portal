@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(150, 29%, 97%); /* Light background color */
+            color: #18341d; /* Text color */
+            text-align: center; /* Center align text globally */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #297021;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 25px; /* Adjusted to move the profile button slightly left */
+        }
+
+        .user-profile {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .login-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown-content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dropdown-content p {
+            margin: 5px 0;
+        }
+
+        .logout-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #c0392b;
+        }
+
+        .main-content {
+            margin-top: 50px; /* Adjust the top margin to position the form */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .booking-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section starts -->
+    <header class="header">
+        <a href="#" class="logo"><span>A</span>YUSH</a>
+
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#service">Service</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#price">Price</a>
+            <a href="index.html#review">Review</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="ourworks.html">Startups</a>
+            <a href="blog.html">Blog</a>
+            <a href="cart.html">Cart</a> <!-- Fixed the path here -->
+            <a href="bookform.html">Register</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+
+        <div id="menu-bars" class="fas fa-bars"></div>
+        <div id="profile" class="profile"></div>
+    </header>
+
+    <!-- Main content starts -->
+    <main class="main-content">
+        <h1>Enter Your Details</h1>
+        
+        <div class="form-group">
+            <input class="booking-form-name" type="text" id="p-name" name="name" placeholder="Patient Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cars">Choose the shift:</label>
+            <select name="cars" id="cars">
+                <option value="Shift 1">Shift 1 - (8:00 AM to 2:00 PM)</option>
+                <option value="Shift 2">Shift 2 - (2:00 PM to 8:00 PM)</option>
+                <option value="Shift 3">Shift 3 - (2:00 AM to 8:00 AM)</option>
+                <option value="Shift 4">Shift 4 - (8:00 PM to 2:00 AM)</option> <!-- Fixed time overlap -->
+            </select>
+        </div>
+
+        <div>
+            <button class="booking-button" onclick="bookAppointment()">Book Appointment</button>
+        </div>
+    </main>
+
+    <script>
+        function bookAppointment() {
+            // Show alert message
+            alert('Your appointment has been booked successfully!');
+            
+            // Redirect to home page after clicking OK
+            window.location.href = 'index.html'; // Update this to your home page URL
+        }
+    </script>
+</body>
+</html>

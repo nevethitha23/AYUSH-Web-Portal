@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Works | Memora Events</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(150, 29%, 97%); /* Light background color */
+            color: #18341d; /* Text color */}
+        
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #297021;
+
+            justify-content: space-between;
+            padding: 5px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 18px;
+        }
+
+        .heading {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 36px;
+            color: #297021; /* Primary color */
+        }
+
+        .about {
+            padding: 40px 20px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px; /* Increased margin for better separation */
+            background-color: #297021; /* White background for rows */
+            padding: 20px; /* Padding for inner content */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            border-radius: 10px; /* Rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+
+        .row:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced box shadow on hover */
+        }
+
+        .image {
+            flex: 1;
+            max-width: 400px; /* Adjusted max-width for images */
+            margin-right: 20px; /* Margin for spacing */
+            overflow: hidden; /* Prevents overflow */
+            border-radius: 10px; /* Rounded corners for images */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease; /* Smooth image transition */
+        }
+
+        .image img:hover {
+            transform: scale(1.05); /* Zoom effect on image hover */
+        }
+
+        .content {
+            flex: 2;
+            padding-left: 20px;
+            color: #fbfbfb; /* Text color */
+        }
+
+        .content h3 {
+            margin-top: 0; /* Adjusted margin */
+            font-size: 24px; /* Larger font size */
+            color: #ffffff; /* Primary color */
+        }
+
+        .content p {
+            margin-bottom: 0; /* Removed margin to prevent extra space */
+            line-height: 1.6; /* Improved line height for readability */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar"></div>
+    </div> 
+  <!-- header section starts  -->
+    <header class="header">
+    <a href="#" class="logo"><span>A</span>YUSH </a>
+
+    <nav class="navbar">
+      <a href="index.html#home">home</a>
+      <a href="index.html#service">service</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#gallery">gallery</a>
+      <a href="index.html#price">price</a>
+      <a href="index.html#review">review</a>
+      <a href="testimonials.html">Testimonials</a>
+      <!-- <a href="#contact">contact</a> -->
+      <a href="ourworks.html">Startups</a>
+      <a href="blog.html">Blog</a>
+      <a href="cart.html" >Cart</a>
+      <a href="bookform.html">Register</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <div id="profile" class="profile"></div>
+    </header>
+
+  
+    <!-- Header section -->
+    <!-- Add your header section here if needed -->
+
+    <!-- Our works section -->
+    <section class="about" id="about">
+        <h1 class="heading"><span>Clinic</span>Details</h1>
+
+        <!-- Existing static events -->
+        <div class="row">
+            <!-- Image for Hospital 1 -->
+            <div class="image">
+                <img src="h77.jpg" alt="Arogya Ayurveda Hospital" />
+            </div>
+            <!-- Content for Hospital 1 -->
+            <div class="content">
+                <h3>Arogya Ayurveda Hospital</h3>
+                <p style="color: white; font-size: 17px;">
+                    Located in Coimbatore, Tamil Nadu, Arogya Ayurveda Hospital offers a range of traditional Ayurvedic treatments focusing on both prevention and management of diseases. They specialize in Panchakarma detoxification, customized herbal therapies, and rejuvenation treatments. The hospital is known for its serene environment and patient-centered care, using authentic Ayurvedic principles to address various health concerns.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Hospital 2 -->
+        <div class="row">
+            <!-- Image for Hospital 2 -->
+            <div class="image">
+                <img src="h88.jpg" alt="Vedic Ayurvedic Clinic" />
+            </div>
+            <!-- Content for Hospital 2 -->
+            <div class="content">
+                <h3>Vedic Ayurvedic Clinic</h3>
+                <p style="color: white; font-size: 17px;">
+                    Vedic Ayurvedic Clinic, located in Chennai, Tamil Nadu, combines ancient Ayurvedic wisdom with modern diagnostic techniques. They offer comprehensive treatments for chronic diseases, stress management, and preventive care, including detoxification therapies and rejuvenation programs. Known for personalized approaches, the clinic tailors treatments based on detailed consultations, and emphasizes diet and lifestyle changes for enhanced wellness.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Hospital 3 -->
+        <div class="row">
+            <!-- Image for Hospital 3 -->
+            <div class="image">
+                <img src="h5.avif" alt="Vaidyar Siddha Clinic" />
+            </div>
+            <!-- Content for Hospital 3 -->
+            <div class="content">
+                <h3>Vaidyar Siddha Clinic</h3>
+                <p style="color: white; font-size: 17px;">
+                    Vaidyar Siddha Clinic in Madurai, Tamil Nadu, is renowned for its expertise in Siddha medicine. They offer specialized treatments for digestive disorders, respiratory issues, and skin conditions, using traditional remedies and therapies such as herbal formulations and detox procedures. The clinic provides holistic care addressing symptoms and underlying causes, with a focus on restoring balance through time-honored methods.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Hospital 4 -->
+        <div class="row">
+            <!-- Image for Hospital 4 -->
+            <div class="image">
+                <img src="h9.jpg" alt="Dr. Siddha Care Clinic" />
+            </div>
+            <!-- Content for Hospital 4 -->
+            <div class="content">
+                <h3>Dr. Siddha Care Clinic</h3>
+                <p style="color: white; font-size: 17px;">
+                    Dr. Siddha Care Clinic in Tiruchirappalli, Tamil Nadu, integrates traditional Siddha medicine with modern health practices. They provide treatments including herbal medicines, detoxification therapies, and lifestyle modifications aimed at managing chronic conditions and improving overall health. Known for its personalized care, the clinic focuses on both symptom management and prevention through natural remedies and individualized treatment plans.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Hospital 5 -->
+        <div class="row">
+            <!-- Image for Hospital 5 -->
+            <div class="image">
+                <img src="h99.webp" alt="Sanjeevanam Ayurvedic Hospital" />
+            </div>
+            <!-- Content for Hospital 5 -->
+            <div class="content">
+                <h3>Sanjeevanam Ayurvedic Hospital</h3>
+                <p style="color: white; font-size: 17px;">
+                    Sanjeevanam Ayurvedic Hospital in Ernakulam, Kerala, provides a holistic approach to health with a focus on Ayurvedic treatments. They offer Panchakarma detoxification, stress relief programs, and rejuvenation therapies in a serene setting. The hospital’s expert practitioners use traditional Ayurvedic methods to promote healing and vitality, with personalized dietary and lifestyle advice to support overall wellness.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Hospital 6 -->
+        <div class="row">
+            <!-- Image for Hospital 6 -->
+            <div class="image">
+                <img src="h4.jpeg" alt="Nalam Siddha Wellness" />
+            </div>
+            <!-- Content for Hospital 6 -->
+            <div class="content">
+                <h3>Nalam Siddha Wellness</h3>
+                <p style="color: white; font-size: 17px;">
+                    Nalam Siddha Wellness in Kottayam, Kerala, specializes in Siddha medicine and holistic health practices. They offer customized treatment plans including herbal remedies, detoxification therapies, and lifestyle modifications. The clinic focuses on balancing the body's systems and addressing health issues through traditional Siddha methods, emphasizing natural treatments and personalized care to enhance overall well-being.
+                </p>
+            </div>
+        </div>
+    </section>
+        <!-- Container for dynamic events -->
+        <div id="eventsContainer"></div>
+    </section>
+
+    <!-- JavaScript to load dynamic events -->
+    <script>
+        // Load events when the page loads
+        window.onload = loadEvents;
+
+        async function loadEvents() {
+            try {
+                const response = await fetch('http://localhost:4000/event/get-all-events');
+                console.log('Response status:', response.status);
+                if (response.ok) {
+                    const events = await response.json();
+                    console.log('Fetched events:', events);
+                    const eventsContainer = document.getElementById('eventsContainer');
+                    eventsContainer.innerHTML = '';
+
+                    events?.data.forEach(event => {
+                        const eventHTML = `
+                            <div class="row">
+                                <div class="image">
+                                    <img src="${event.image}" alt="${event.event_name}" />
+                                </div>
+                                <div class="content">
+                                    <h3>${event.event_name}</h3>
+                                    <p>${event.description}</p>
+                                </div>
+                            </div>
+                        `;
+                        eventsContainer.insertAdjacentHTML('beforeend', eventHTML);
+                    });
+                } else {
+                    alert('Failed to fetch events.');
+                }
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                alert('An error occurred while fetching events.');
+            }
+        }
+    </script>
+</body>
+</html>

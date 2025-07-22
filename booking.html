@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Works | Memora Events</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(150, 29%, 97%);
+    color: #18341d;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #297021;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar {
+          display: flex;
+          gap: 20px;
+      }
+
+
+        .image-container {
+            display: grid;
+            
+
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+            padding: 40px;
+        }
+
+        .image-item {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .image-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .image-item h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .booking-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 0 10px 10px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .heading {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+</div> 
+<!-- header section starts  -->
+<header class="header">
+<a href="#" class="logo"><span>A</span>YUSH </a>
+
+<nav class="navbar">
+  <a href="index.html#home">home</a>
+  <a href="index.html#service">service</a>
+  <a href="index.html#about">about</a>
+  <a href="index.html#gallery">gallery</a>
+  <a href="index.html#price">price</a>
+  <a href="index.html#review">review</a>
+  <a href="testimonials.html">Testimonials</a>
+  <!-- <a href="#contact">contact</a> -->
+  <a href="ourworks.html">Startups</a>
+  <a href="blog.html">Blog</a>
+  <a href="cart.html" >Cart</a>
+  <a href="bookform.html">Register</a>
+  <a href="admin.html">Admin</a>
+</nav>
+
+<div id="menu-bars" class="fas fa-bars"></div>
+<div id="profile" class="profile"></div>
+</header>
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>A Way to Your</span> Dream</h1>
+
+        <div class="image-container">
+            <div class="image-item">
+                <img src="event1.jpeg" alt="Corporate Event">
+                <div class="overlay">
+                    <h3>Corporate Event</h3>
+                    <button class="booking-button" onclick="bookEvent('Corporate Event')">Book Now</button>
+                </div>
+            </div>
+            <div class="image-item">
+                <img src="event3.jpeg" alt="Music Fest">
+                <div class="overlay">
+                    <h3>Music Fest</h3>
+                    <button class="booking-button" onclick="bookEvent('Music Fest')">Book Now</button>
+                </div>
+            </div>
+            <div class="image-item">
+                <img src="gallery1.jpg" alt="Wedding Ceremony">
+                <div class="overlay">
+                    <h3>Wedding Ceremony</h3>
+                    <button class="booking-button" onclick="bookEvent('Wedding Ceremony')">Book Now</button>
+                </div>
+            </div>
+            <div class="image-item">
+                <img src="gallery3.jpg" alt="Birthday Party">
+                <div class="overlay">
+                    <h3>Birthday Party</h3>
+                    <button class="booking-button" onclick="bookEvent('Birthday Party')">Book Now</button>
+                </div>
+            </div>   
+                <div class="image-item">
+                    <img src="img5.jpg" alt="Art Exhibition">
+                    <div class="overlay">
+                        <h3>Art Exhibition</h3>
+                        <button class="booking-button" onclick="bookEvent('Art Exhibition')">Book Now</button>
+                    </div>
+
+            </div>
+            <div class="image-item">
+                <img src="img7.jpg" alt="Get Together">
+                <div class="overlay">
+                    <h3>Get Together</h>
+                    <button class="booking-button" onclick="bookEvent('Get Together')">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function bookEvent(eventName) {
+            window.location.href = `bookform.html?event=${encodeURIComponent(eventName)}`;
+        }
+    </script>
+</body>
+</html>

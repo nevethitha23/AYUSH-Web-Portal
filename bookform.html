@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Tracking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(150, 29%, 97%);
+            color: #18341d;
+        }
+        .header {
+          display: flex;
+          align-items: center;
+          background-color: #297021;
+          justify-content: space-between;
+          padding: 10px 20px;
+      }
+
+      .navbar {
+          display: flex;
+          gap: 20px;
+      }
+
+      .navbar a {
+          color: white; /* Updated text color to white */
+          text-decoration: none;
+      }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .booking-form, .tracking-form {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .booking-form h2, .tracking-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #297021;
+        }
+
+        .booking-form label, .tracking-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #18341d;
+        }
+
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .booking-form button, .tracking-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .booking-form button:hover, .tracking-form button:hover {
+            background-color: #218838;
+        }
+
+        .tracking-form .step {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .tracking-form .step.completed {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .tracking-form .step.pending {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .notification {
+            text-align: center;
+            margin-top: 20px;
+            color: #297021;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+</div> 
+<!-- header section starts  -->
+<header class="header">
+<a href="#" class="logo"><span>A</span>YUSH </a>
+
+<nav class="navbar">
+  <a href="index.html#home">home</a>
+  <a href="index.html#service">service</a>
+  <a href="index.html#about">about</a>
+  <a href="index.html#gallery">gallery</a>
+  <a href="index.html#price">price</a>
+  <a href="index.html#review">review</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="ourworks.html">Startups</a>
+  <a href="blog.html">Blog</a>
+  <a href="cart.html">Cart</a>
+  <a href="bookform.html">Register</a>
+  <a href="admin.html">Admin</a>
+</nav>
+
+<div id="menu-bars" class="fas fa-bars"></div>
+<div id="profile" class="profile"></div>
+</header>
+
+<div class="booking-form" id="bookingFormContainer">
+    <h2>Register Your Clinic</h2>
+    <form id="bookingForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="clinicName">Clinic or Hospital Name:</label>
+        <input type="text" id="clinicName" name="clinicName" required>
+
+        <label for="businessEmail">Business Email:</label>
+        <input type="email" id="businessEmail" name="businessEmail" required>
+
+        <label for="personalEmail">Personal Email:</label>
+        <input type="email" id="personalEmail" name="personalEmail" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Clinic Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="website">Website Link:</label>
+        <input type="url" id="website" name="website" required>
+        <label for="documentUpload">Approved License:</label>
+        <input type="file" id="documentUpload" name="documentUpload" required>
+
+        <label for="tinNumber">TIN Number:</label>
+        <input type="text" id="tinNumber" name="tinNumber" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="tracking-form" id="trackingFormContainer" style="display: none;">
+    <h2>Tracking Validation Steps</h2>
+    <div class="step" id="step1">Step 1: Professional Documentation - Pending</div>
+    <div class="step" id="step2">Step 2: Approved Clinic - Pending</div>
+    <div class="step" id="step3">Step 3: Valid Documentation - Pending</div>
+    <div class="notification" id="notification" style="display: none;">
+        Validation completed! You will receive a member link shortly.
+    </div>
+</div>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        document.getElementById('bookingFormContainer').style.display = 'none';
+        document.getElementById('trackingFormContainer').style.display = 'block';
+
+        setTimeout(() => {
+            document.getElementById('step1').classList.add('completed');
+            document.getElementById('step1').textContent = 'Step 1: Professional Documentation - Completed';
+        }, 1000);
+
+        setTimeout(() => {
+            document.getElementById('step2').classList.add('completed');
+            document.getElementById('step2').textContent = 'Step 2: Approved Clinic - Completed';
+        }, 3000);
+
+        setTimeout(() => {
+            document.getElementById('step3').classList.add('completed');
+            document.getElementById('step3').textContent = 'Step 3: Valid Documentation - Completed';
+            document.getElementById('notification').style.display = 'block';
+        }, 5000);
+    });
+</script>
+
+</body>
+</html>

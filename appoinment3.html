@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital and Doctor Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(150, 29%, 97%);
+            color: #18341d;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #297021;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 25px;
+        }
+
+        .user-profile {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .login-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown-content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dropdown-content p {
+            margin: 5px 0;
+        }
+
+        .logout-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #c0392b;
+        }
+
+        .circle-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+
+        .details {
+            margin-top: 20px;
+            text-align: center; /* Center text in details */
+            display: inline-block;
+            max-width: 600px;
+        }
+
+        .booking-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 30%;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            margin: 20px auto; /* Center the table horizontally */
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 20px;
+            text-align: center;
+            border: 3px solid #ddd;
+        }
+
+        td {
+            padding: 20px;
+            text-align: center;
+            border: 3px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><span>A</span>YUSH</a>
+
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#service">Service</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#price">Price</a>
+            <a href="index.html#review">Review</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="ourworks.html">Startups</a>
+            <a href="blog.html">Blog</a>
+            <a href="cart.html">Cart</a>
+            <a href="bookform.html">Register</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+
+        <div id="menu-bars" class="fas fa-bars"></div>
+        <div id="profile" class="profile"></div>
+    </header>
+
+    <table>
+        <tr>
+            <th>
+                <div class="container">
+                    <img src="ai31.jpg" alt="Circle Image" class="circle-image">
+                    <h3>Name: Dr. Karunakaran</h3>
+                    <h3>Hospital: Vaidyar Siddha Clinic</h3>
+                    <h3>Specialist: Heart Disease</h3>
+                    
+                    <div class="details">
+                        <h3><u>Doctor's Experience</u></h3>
+            <p>Dr. Karunakaran has over 25 years of experience in the field of Ayurvedic medicine, specializing in the treatment of heart diseases. He has successfully treated thousands of patients using traditional Ayurvedic techniques combined with modern medical practices.</p>
+            
+            <h3><u>Hospital Details</u></h3>
+            <p>Vaidyar Siddha Clinic is a leading healthcare facility dedicated to providing holistic and natural treatments. The hospital focuses on Ayurvedic healing practices and has a reputation for excellence in patient care.</p>
+            
+            <h3><u>Number of Patients Cured</u></h3>
+            <p>The hospital has treated over 10,000 patients, with a remarkable success rate, particularly in curing heart diseases and related conditions.</p>
+            <button class="booking-button" onclick="window.location.href='bo1.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>
+                <div class="container">
+                    <img src="ai32.jpg" alt="Circle Image" class="circle-image">
+                    <h3>Name: Dr. Sam</h3>
+            <h3>Hospital: Vaidyar Siddha Clinic</h3>
+            <h3>Specialist: Liver Disease</h3>
+            <div class="details">
+                <h3><u>Doctor's Experience</u></h3>
+                <p>Dr. Sam has over 25 years of experience in the field of Ayurvedic medicine, specializing in the treatment of heart diseases. He has successfully treated thousands of patients using traditional Ayurvedic techniques combined with modern medical practices.</p>
+                
+                <h3><u>Hospital Details</u></h3>
+                <p>Vaidyar Siddha Clinic is a leading healthcare facility dedicated to providing holistic and natural treatments. The hospital focuses on Ayurvedic healing practices and has a reputation for excellence in patient care.</p>
+                
+                <h3><u>Number of Patients Cured</u></h3>
+                <p>The hospital has treated over 10,000 patients, with a remarkable success rate, particularly in curing heart diseases and related conditions.</p>
+                <button class="booking-button" onclick="window.location.href='bo1.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>
+                <div class="container">
+                    <img src="ai33.jpg" alt="Circle Image" class="circle-image">
+                    <h3>Name: Dr. Thiru</h3>
+            <h3>Hospital: Vaidyar Siddha Clinic</h3>
+            <h3>Specialist: Stomach Disease</h3>
+                    <div class="details">
+                        <p>Dr. Thiru has over 25 years of experience in the field of Ayurvedic medicine, specializing in the treatment of heart diseases. He has successfully treated thousands of patients using traditional Ayurvedic techniques combined with modern medical practices.</p>
+                
+                <h3><u>Hospital Details</u></h3>
+                <p>Vaidyar Siddha Clinic is a leading healthcare facility dedicated to providing holistic and natural treatments. The hospital focuses on Ayurvedic healing practices and has a reputation for excellence in patient care.</p>
+                
+                <h3><u>Number of Patients Cured</u></h3>
+                <p>The hospital has treated over 10,000 patients, with a remarkable success rate, particularly in curing heart diseases and related conditions.</p>
+                <button class="booking-button" onclick="window.location.href='bo1.html'">Book Appointment</button>
+                

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    .signup-login-form-container {
+        padding: 20px;
+        flex: 1;
+        background-color: rgb(243, 237, 239);
+    }
+    
+    .signup-login-button {
+        margin-top: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .signup-login-button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<body class="signup-login-body">
+    <div class="signup-login-container">
+        <div class="signup-login-form-container">
+            <h2 style="margin-bottom: 20px; padding: 20px;">Sign Up</h2>
+          
+            <form id="signupForm" class="signup-login-form">
+                <div class="signup-login-input-container">
+                    <input type="text" id="username" placeholder=" " required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="signup-login-input-container">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="signup-login-input-container">
+                    <input type="password" id="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="signup-login-input-container">
+                    <input type="password" id="confirmPassword" placeholder=" " required>
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+                <button type="submit" class="signup-login-button">Sign Up</button>
+                <p class="signup-login-p">Already have an account? <a href="login.html" class="signup-login-a">Login here</a></p>
+
+            </form>
+        </div>
+        <div class="signup-login-img-container">
+            <img src="limg.webp" alt="Signup Image" class="signup-login-img">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupForm = document.querySelector('#signupForm');
+
+            async function handleSignup(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const username = document.querySelector('#username').value;
+                const email = document.querySelector('#email').value;
+                const password = document.querySelector('#password').value;
+                const confirmPassword = document.querySelector('#confirmPassword').value;
+
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match.');
+                    return;
+                }
+
+                const userData = {
+                    username: username,
+                    email: email,
+                    password: password,
+                    confirm_password: confirmPassword
+                };
+
+                try {
+                    const response = await fetch("http://localhost:4000/auth/register", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(userData)
+                    });
+
+                    if (response.status === 200) {
+                        alert('Sign up successful. Please login.');
+                        window.location.href = 'login.html'; // Redirect to login page after signup
+                    } else {
+                        const errorData = await response.json();
+                        alert(errorData.message || 'You already have an account. Please login.');
+                    }
+                } catch (error) {
+                    alert('An error occurred during signup.');
+                    console.error('Signup error:', error);
+                }
+            }
+
+            // Add event listener to the signup form
+            signupForm.addEventListener('submit', handleSignup);
+        });
+    </script>
+</body>
+</html>

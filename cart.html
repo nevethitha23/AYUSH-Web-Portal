@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styling for the cart layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+          display: flex;
+          align-items: center;
+          background-color: #297021;
+
+          justify-content: space-between;
+          padding: 10px 20px;
+      }
+
+        .navbar {
+          display: flex;
+          gap: 20px;
+      }
+        .cart-container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            justify-content: space-between;
+        }
+        .item-image img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .item-details {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        .item-name {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .item-price {
+            margin-left: 10px;
+        }
+        .add-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-button:hover {
+            background-color: #45a049;
+        }
+        .cart-total, .user-details-form {
+            margin-top: 20px;
+        }
+        .checkout-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .checkout-button:hover {
+            background-color: #45a049;
+        }
+        .user-details-form {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .user-details-form input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .submit-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+</div> 
+<!-- header section starts  -->
+<header class="header">
+<a href="#" class="logo"><span>A</span>YUSH </a>
+
+<nav class="navbar">
+  <a href="index.html#home">home</a>
+  <a href="index.html#service">service</a>
+  <a href="index.html#about">about</a>
+  <a href="index.html#gallery">gallery</a>
+  <a href="index.html#price">price</a>
+  <a href="index.html#review">review</a>
+  <a href="testimonials.html">Testimonials</a>
+  <!-- <a href="#contact">contact</a> -->
+  <a href="ourworks.html">Startups</a>
+  <a href="blog.html">Blog</a>
+  <a href="cart.html" >Cart</a>
+  <a href="bookform.html">Register</a>
+  <a href="admin.html">Admin</a>
+</nav>
+
+<div id="menu-bars" class="fas fa-bars"></div>
+<div id="profile" class="profile"></div>
+</header>
+
+    
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <ul class="cart-items">
+            <!-- Item 1 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart1.jpg" alt="Amala Rayasana">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Amala Rayasana</span>
+                    <span class="item-price">₹120.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Amala Rayasana" data-price="120">Add</button>
+                </div>
+            </li>
+            <!-- Item 2 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart2.jpg" alt="Immune Booster">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Immune Booster</span>
+                    <span class="item-price">₹125.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Immune Booster" data-price="125">Add</button>
+                </div>
+            </li>
+            <!-- Item 3 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart3.jpg" alt="Herbal Tea">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Herbal Tea</span>
+                    <span class="item-price">₹80.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Herbal Tea" data-price="80">Add</button>
+                </div>
+            </li>
+            <!-- Item 4 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart4.jpg" alt="Pain Relief Oil">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Pain Relief Oil</span>
+                    <span class="item-price">₹150.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Pain Relief Oil" data-price="150">Add</button>
+                </div>
+            </li>
+            <!-- Item 5 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart5.jpg" alt="Skin Care Cream">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Skin Care Cream</span>
+                    <span class="item-price">₹200.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Skin Care Cream" data-price="200">Add</button>
+                </div>
+            </li>
+            <!-- Item 6 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart6.jpg" alt="Hair Growth Serum">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Hair Growth Serum</span>
+                    <span class="item-price">₹250.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Hair Growth Serum" data-price="250">Add</button>
+                </div>
+            </li>
+            <!-- Item 7 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart7.jpg" alt="Weight Loss Capsules">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Weight Loss Capsules</span>
+                    <span class="item-price">₹180.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Weight Loss Capsules" data-price="180">Add</button>
+                </div>
+            </li>
+            <!-- Item 8 -->
+            <li class="cart-item">
+                <div class="item-image">
+                    <img src="cart8.jpg" alt="Energy Booster">
+                </div>
+                <div class="item-details">
+                    <span class="item-name">Energy Booster</span>
+                    <span class="item-price">₹220.00</span>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" data-name="Energy Booster" data-price="220">Add</button>
+                </div>
+            </li>
+            <!-- Add more items as needed -->
+        </ul>
+        <div class="cart-total">
+            <h3>Total: ₹<span id="total">0.00</span></h3>
+            <button class="checkout-button" id="checkout-button">Buy</button>
+        </div>
+        <div class="user-details-form" id="user-details-form">
+            <h2>Enter Your Details</h2>
+            <input type="text" id="user-name" placeholder="Enter your name" required>
+            <input type="email" id="user-email" placeholder="Enter your email" required>
+            <input type="tel" id="user-phone" placeholder="Enter your phone number" required>
+            <input type="text" id="user-address" placeholder="Enter your address" required>
+            <button class="submit-button" id="submit-button">Submit</button>
+        </div>
+    </div>
+    <script>
+        const addItemButtons = document.querySelectorAll('.add-button');
+        const totalElement = document.getElementById('total');
+        const checkoutButton = document.getElementById('checkout-button');
+        const userDetailsForm = document.getElementById('user-details-form');
+        const submitButton = document.getElementById('submit-button');
+
+        let total = 0;
+
+        addItemButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const price = parseInt(button.getAttribute('data-price'));
+                total += price;
+                totalElement.innerText = total.toFixed(2);
+                alert(`${button.getAttribute('data-name')} added to cart!`);
+            });
+        });
+
+        checkoutButton.addEventListener('click', () => {
+            userDetailsForm.style.display = 'flex';
+        });
+
+        submitButton.addEventListener('click', () => {
+            const name = document.getElementById('user-name').value;
+            const email = document.getElementById('user-email').value;
+            const phone = document.getElementById('user-phone').value;
+            const address = document.getElementById('user-address').value;
+
+            if (name && email && phone && address) {
+                alert('Order placed successfully!');
+                userDetailsForm.style.display = 'none';
+                total = 0;
+                totalElement.innerText = '0.00';
+            } else {
+                alert('Please fill in all details.');
+            }
+        });
+    </script>
+</body>
+</html>

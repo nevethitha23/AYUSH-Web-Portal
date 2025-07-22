@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH PORTAL</title>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(150, 29%, 97%); /* Light background color */
+            color: #18341d; /* Text color */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #297021;
+
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 25px; /* Adjusted to move the profile button slightly left */
+        }
+
+        .user-profile {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .login-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown-content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dropdown-content p {
+            margin: 5px 0;
+        }
+
+        .logout-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #c0392b;
+        }
+
+
+        .swiper-slide {
+  position: relative;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Different text for each slide */
+.slide1::after {
+  content: 'Arogya Ayurveda Hospital';
+}
+
+.slide2::after {
+  content: 'Vedic Ayurvedic Clinic';
+}
+
+.slide3::after {
+  content: 'Vaidyar Siddha Clinic';
+}
+
+.slide4::after {
+  content: 'Dr. Siddha Care Clinic';
+}
+
+.slide5::after {
+  content: 'Sanjeevanam Ayurvedic Hospital';
+}
+
+.slide6::after {
+  content: 'Nalam Siddha Wellness';
+}
+
+/* Common styling for all text */
+.swiper-slide::after {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: white;
+  background-color:#297021;
+  padding: 3px 80px; /* Keep horizontal padding for a long box */
+  border-radius: 5px;
+  width: auto;
+  max-width: 90%;
+  white-space: nowrap; /* Ensure text stays on a single line */
+  text-align: center; /* Center-align the text */
+  line-height: 1; /* Keep line height minimal */
+}
+
+    </style>
+</head>
+<body>
+   <div id="navbar"></div>
+  </div> 
+    <!-- header section starts  -->
+    <header class="header">
+      <a href="#" class="logo"><span>A</span>YUSH </a>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#service">service</a>
+        <a href="#about">about</a>
+        <a href="#gallery">gallery</a>
+        <a href="#price">price</a>
+        <a href="#review">review</a>
+        <a href="testimonials.html">Testimonials</a>
+        <!-- <a href="#contact">contact</a> -->
+        <a href="ourworks.html">Startups</a>
+        <a href="blog.html">Blog</a>
+        <a href="cart.html" >Cart</a>
+        <a href="bookform.html">Register</a>
+        <a href="admin.html">Admin</a>
+        
+
+        
+        
+      </nav>
+
+      <div id="menu-bars" class="fas fa-bars"></div>
+      <div id="profile" class="profile"></div>
+    </header>
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>
+          where We Care The Healers
+          <span> AYUSH STARTUPS </span>
+        </h3>
+        <a href="https://wa.me/9344304597?text=Hello%20there!" class="btn"><button style="background-color: #2980b9;">Chat with us</button></a>
+      </div>
+
+      <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide1">
+            <a onclick="window.location.href='appoinment.html'" ><img src="h77.jpg" alt="">  </a>
+          </div>
+          <div class="swiper-slide slide2">
+            <a onclick="window.location.href='appoinment2.html'"><img src="h88.jpg" alt=""> </a>
+          </div>
+          <div class="swiper-slide slide3">
+            <a onclick="window.location.href='appoinment3.html'"><img src="h99.jpg" alt=""></a>
+          </div>
+          <div class="swiper-slide slide4">
+            <a onclick="window.location.href='appoinment4.html'"><img src="h7.jpg" alt=""></a>
+          </div>
+          <div class="swiper-slide slide5">
+            <a onclick="window.location.href='appoinment5.html'"><img src="h5.avif" alt=""></a>
+          </div>
+          <div class="swiper-slide slide6">
+            <a onclick="window.location.href='appoinment6.html'"><img src="h8.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- service section starts  -->
+    <section class="service" id="service">
+      <h1 class="heading" style="color: #297021;">our <span>services</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-envelope"></i>
+          <h3>Medical Reports</h3>
+          <p>
+            AYUSH clinics provide detailed medical reports that include diagnoses, treatment plans, and progress updates. These reports highlight natural remedies, lifestyle recommendations, and holistic patient evaluations.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-photo-video"></i>
+          <h3>Scans and Prescriptions</h3>
+          <p>
+            AYUSH clinics use traditional diagnostic methods like pulse diagnosis and Nadi Pariksha. They provide personalized prescriptions, including herbal remedies, dietary plans, and lifestyle changes for holistic health.          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-music"></i>
+          <h3>Online Yoga Sessions</h3>
+          <p>
+            AYUSH clinics offer online yoga sessions focusing on physical and mental wellness. These guided practices promote relaxation, flexibility, and overall health from the comfort of home.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-car"></i>
+          <h3>Vehicle Arrangement</h3>
+          <p>
+            AYUSH clinics offer vehicle services for patients during critical situations, ensuring fast transport from nearby areas. This ensures timely access to necessary treatments in emergencies.          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Clinic selection</h3>
+          <p>
+            AYUSH platforms provide an easy-to-use feature for selecting nearby clinics based on location. This helps patients quickly find the closest clinic for timely and convenient healthcare services.
+
+
+
+
+
+
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-birthday-cake"></i>
+          <h3>Natural Remedies</h3>
+          <p>
+            Natural remedies use plant-based treatments and traditional methods from Ayurveda, Unani, Siddha, and Homeopathy. These remedies focus on promoting healing, boosting immunity, and improving overall health.          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section starts  -->
+    <section class="about" id="about">
+      <h1 class="heading" style="color: #297021;">about <span> us</span> </h1>
+
+      <div class="row">
+        <div class="image">
+          <img src="d2.jpg" alt="" />
+        </div>
+
+        <div class="content">
+          <h3> AYUSH Startup Portal</h3>
+          <p>
+            Our AYUSH Startup Portal is designed to simplify the registration process for businesses in the Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy sectors. We aim to provide a user-friendly experience that helps AYUSH startups get registered efficiently, ensuring compliance with government guidelines and fast-tracking their path to success.          <p>
+              Whether you are setting up a new clinic or expanding your business, our platform is here to support you with seamless application submissions, easy document uploads, and real-time progress tracking. We are committed to empowering your journey towards contributing to holistic health and wellness.          </p>
+          <a href="#" class="btn">reach us</a>
+        
+
+      
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery section starts  -->
+    <section class="gallery" id="gallery">
+      <h1 class="heading" style="color: #297021;">our <span>gallery</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="c8.jpg" alt="" />
+          <h3 class="title">Yoga Theraphy</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="b2.avif" alt="" />
+          <h3 class="title">Formulation</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="c2.jpg" alt="" />
+          <h3 class="title">Vasti treatment</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="c1.jpeg" alt="" />
+          <h3 class="title">Janu Vasti</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="c4.jpeg" alt="" />
+          <h3 class="title">Panchakarmah</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="c3.webp" alt="" />
+          <h3 class="title">Neck Acupunture</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="c5.jpg" alt="" />
+          <h3 class="title">Sirodharah</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="c6.jpg" alt="" />
+          <h3 class="title">Upanaham Theraphy</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="d1.jpg" alt="" />
+          <h3 class="title">Natural Remedies</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- price section starts  -->
+    <section class="price" id="price">
+      <h1 class="heading" style="color: #297021;">our <span>pricing</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <h3 class="title">basic</h3>
+          <h3 class="amount">200.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>Full AYUSH Services</li>
+            <li><i class="fas fa-check"></i>Herbal Decorations </li>
+            <li><i class="fas fa-check"></i>Healing Music and Stories</li>
+            <li><i class="fas fa-check"></i>Herbal Food and Drinks</li>
+            <li><i class="fas fa-check"></i>Personalized Consultation Cards</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">prime</h3>
+          <h3 class="amount">550.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>Full AYUSH Services</li>
+            <li><i class="fas fa-check"></i>Herbal Decorations </li>
+            <li><i class="fas fa-check"></i>Healing Music and Stories</li>
+            <li><i class="fas fa-check"></i>Herbal Food and Drinks</li>
+            <li><i class="fas fa-check"></i>Personalized Consultation Cards</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">luxury</h3>
+          <h3 class="amount">1060.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>Full AYUSH Services</li>
+            <li><i class="fas fa-check"></i>Herbal Decorations</li>
+            <li><i class="fas fa-check"></i>Healing Music and Stories</li>
+            <li><i class="fas fa-check"></i>Herbal Food and Drinks </li>
+            <li><i class="fas fa-check"></i>Personalized Consultation Cards</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">ultra</h3>
+          <h3 class="amount">2099.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>Full AYUSH Services</li>
+            <li><i class="fas fa-check"></i>Herbal Decorations</li>
+            <li><i class="fas fa-check"></i>Healing Music and Stories </li>
+            <li><i class="fas fa-check"></i>Herbal Food and Drinks</li>
+            <li><i class="fas fa-check"></i>Personalized Consultation Cards </li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- review section starts  -->
+    <section class="reivew" id="review">
+      <h1 class="heading" style="color: #297021;">client's <span>review</span></h1>
+
+      <div class="review-slider swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img1.jpg" alt="" />
+              <div class="user-info">
+                <h3>Priya Sharma</h3>
+                <span>happy clients</span>
+              </div>
+            </div>
+            <p>
+              The AYUSH clinic has transformed my health journey with personalized treatments and holistic care. The staff is incredibly knowledgeable and supportive.            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img2.jpg" alt="" />
+              <div class="user-info">
+                <h3> Rajesh Kumar</h3>
+                <span>happy clients</span>
+              </div>
+            </div>
+            <p>Exceptional service and a soothing environment around nature. The herbal remedies provided were effective and tailored to my needs
+                         </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img3.jpg" alt="" />
+              <div class="user-info">
+                <h3> Anita </h3>
+                <span>happy clients</span>
+              </div>
+            </div>
+            <p>
+              I experienced significant improvement with their Ayurvedic treatments. The online yoga sessions are a fantastic addition to my wellness routine.            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img4.jpg" alt="" />
+              <div class="user-info">
+                <h3> Arjun</h3>
+                <span>happy clients</span>
+              </div>
+            </div>
+            <p>
+              Quick and efficient registration process, and the medical reports were thorough and clear,improved my overall well-being. The entire team was very professional.            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section starts  -->
+   
+    <!-- <section class="contact" id="contact">
+      <h1 class="heading"><span>contact</span> us</h1>
+      <form id="contactForm">
+          <div class="inputBox">
+              <input type="text" id="name" placeholder="name" required />
+              <input type="email" id="email" placeholder="email" required />
+          </div>
+          <div class="inputBox">
+              <input type="tel" id="number" placeholder="number" required />
+              <input type="text" id="subject" placeholder="subject" required />
+          </div>
+          <textarea id="message" placeholder="message" cols="30" rows="10" required></textarea>
+          <input type="submit" value="send message" class="btn" />
+      </form>
+  </section>
+  
+  <script type="text/javascript">
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+  
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const number = document.getElementById('number').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+  
+          const data = {
+              name,
+              email,
+              number,
+              subject,
+              message
+          };
+  
+          fetch('http://localhost:4000/email/send-email', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+          })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Failed to send message');
+              }
+              return response.json();
+          })
+          .then(data => {
+              console.log('Message sent successfully:', data);
+              alert('Message sent successfully!');
+          })
+          .catch(error => {
+              console.error('Error sending message:', error);
+              alert('Failed to send message. Please try again.');
+          });
+      });
+  </script> -->
+  
+
+
+
+    <!-- footer section starts  -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>branches</h3>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> Kochin </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> Madurai </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> kerala </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> Trichy </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> price </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+          <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+          <a href="#"> <i class="fas fa-envelope"></i> ayush@gmail.com </a>
+          <a href="#"> <i class="fas fa-envelope"></i> ayushind@gmail.com </a>
+          <a href="#">
+            <i class="fas fa-map-marker-alt"></i> TamilNadu, india - 560054
+          </a>
+          </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+        </div>
+      </div>
+
+      <div class="credit">
+       
+      </div>
+    </section>
+
+    <div class="theme-toggler">
+      <div class="toggle-btn">
+          <i class="fas fa-cog"></i>
+      </div>
+      <h3>choose color</h3>
+      <div class="buttons">
+          <div class="theme-btn" style="background: #ccff33"></div>
+          <div class="theme-btn" style="background: #d35400"></div>
+          <div class="theme-btn" style="background: #f39c12"></div>
+          <div class="theme-btn" style="background: #1abc9c"></div>
+          <div class="theme-btn" style="background: #3498db"></div>
+          <div class="theme-btn" style="background: #9b59b6"></div>
+      </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!--JS file-->
+  <script src="app.js"></script>
+
+  <!-- Login Form -->
+  <div class="login-form" id="loginForm" style="display:none;">
+      <!-- Paste your login HTML code here -->
+  </div>
+
+  <!-- Signup Form -->
+  <div class="signup-form" id="signupForm" style="display:none;">
+      <!-- Paste your signup HTML code here -->
+  </div>
+
+  <!-- JavaScript to toggle between login and signup forms -->
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const loginButton = document.querySelector('#loginButton');
+          const signupButton = document.querySelector('#signupButton');
+          const loginForm = document.querySelector('#loginForm');
+          const signupForm = document.querySelector('#signupForm');
+
+          loginButton.addEventListener('click', function() {
+              loginForm.style.display = 'block';
+              signupForm.style.display = 'none';
+          });
+
+          signupButton.addEventListener('click', function() {
+              loginForm.style.display = 'none';
+              signupForm.style.display = 'block';
+          });
+      });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const profileDiv = document.getElementById('profile');
+      const loggedInUser = localStorage.getItem('loggedInUser');
+    console.log(loggedInUser);
+      function updateProfileUI(username) {
+          if (username) {
+              profileDiv.innerHTML = `
+                  <div class="user-profile">${username.charAt(0).toUpperCase()}</div>
+                  <div class="dropdown">
+                      <div class="dropdown-content">
+                          <p>${username}</p>
+                          <button class="logout-button">Logout</button>
+                      </div>
+                  </div>
+              `;
+
+              profileDiv.querySelector('.user-profile').addEventListener('click', function() {
+                  const dropdown = profileDiv.querySelector('.dropdown');
+                  dropdown.classList.toggle('active');
+              });
+
+              profileDiv.querySelector('.logout-button').addEventListener('click', function() {
+                  localStorage.removeItem('loggedInUser');
+                  updateProfileUI(null);
+              });
+          } else {
+              profileDiv.innerHTML = `<a href="login.html" class="login-button">Login</a>`;
+          }
+      }
+
+      updateProfileUI(loggedInUser);
+  });
+</script>
+
+</body>
+</html>

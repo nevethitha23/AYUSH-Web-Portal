@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    .signup-login-form-container {
+        padding: 20px;
+        flex: 1;
+        background-color: rgb(243, 237, 239);
+    }
+    
+    .signup-login-button {
+        margin-top: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .signup-login-button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<body class="signup-login-body">
+    <div class="signup-login-container">
+        <div class="signup-login-form-container">
+            <h2 style="margin-bottom: 20px; padding: 20px;">Login</h2>
+          
+            <form id="loginForm" class="signup-login-form">
+                <div class="signup-login-input-container">
+                    <input type="username" id="loginUsername" placeholder=" " required>
+                    <label for="loginUsername">Username</label>
+                </div>
+                <div class="signup-login-input-container">
+                    <input type="password" id="loginPassword" placeholder=" " required>
+                    <label for="loginPassword">Password</label>
+                </div>
+                <button type="submit" class="signup-login-button">Login</button>
+                <p class="signup-login-p"><a href="forgot-password.html" class="signup-login-a">Forgot Password?</a></p>
+            </form>
+            <button id="createAccountButton" class="signup-login-button">Create a New Account</button>
+        </div>
+        <div class="signup-login-img-container">
+            <img src="limg.webp" alt="Login Image" class="signup-login-img">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('#loginForm');
+            const forgotPasswordLink = document.querySelector('.signup-login-p a');
+            const createAccountButton = document.querySelector('#createAccountButton');
+
+            async function handleLogin(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const username = document.querySelector('#loginUsername').value;
+                const password = document.querySelector('#loginPassword').value;
+
+                const userData = {
+                    username: username,
+                    password: password
+                };
+
+                try {
+                    const response = await fetch("http://localhost:4000/auth/login", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(userData)
+                    });
+
+                    if (response.status === 200) {
+                        const responseData = await response.json();
+                        localStorage.setItem('loggedInUser', username);
+                        alert('Login successful');
+                        window.location.href = 'index.html'; // Redirect to home page after login
+                    } else {
+                        const errorData = await response.json();
+                        alert(errorData.message || 'Invalid username or password. Please try again.');
+                    }
+                } catch (error) {
+                    alert('An error occurred during login.');
+                    console.error('Login error:', error);
+                }
+            }
+
+            function handleForgotPassword(event) {
+                event.preventDefault();
+                window.location.href = 'forgot-password.html';
+            }
+
+            function handleCreateAccount() {
+                window.location.href = 'signup.html';
+            }
+
+            // Add event listeners
+            loginForm.addEventListener('submit', handleLogin);
+            forgotPasswordLink.addEventListener('click', handleForgotPassword);
+            createAccountButton.addEventListener('click', handleCreateAccount);
+        });
+    </script>
+</body>
+</html>
